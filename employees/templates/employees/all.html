@@ -1,0 +1,17 @@
+<style>
+    table, th, td {
+    border: 1px solid black;
+    }
+    </style>
+
+
+<table >
+    <tr><th>Bereich</th></tr> 
+    {% for department in departments %}
+        <tr><td>{{department.name}}</td></tr>
+        <tr><td>
+        {% for costcentre in department.costcentres.all %}
+        {{costcentre.name}},
+        {% endfor %}</td></tr>
+        {% endfor %}
+</table>
